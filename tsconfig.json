@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true,
+    "strict": true, //this의 타입체크를 활용하려면 true (그렇지 않으면 항상 any타입으로 처리됨)
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
