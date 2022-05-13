@@ -47,10 +47,10 @@ export default defineComponent({
   1. any : 기본적으로 타입 체킹을 하지 않는 것과 같음 (권고하지 않음)
   2. type : 타입이 명시되어 있는 고정된 수의 요소를 포함한 타입 배열을 정의
   3. enum : numberic값들을 익숙한 네임으로 정의 할 수 있다.
-  이 외의 것들은 아래 페이지 참고
-  [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-  [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
-  [타입스크립트에서 기본적으로 제공해주는 유틸 타입](https://blog.martinwork.co.kr/typescript/2019/05/28/typescript-util-types.html)
+     이 외의 것들은 아래 페이지 참고
+     [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+     [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
+     [타입스크립트에서 기본적으로 제공해주는 유틸 타입](https://blog.martinwork.co.kr/typescript/2019/05/28/typescript-util-types.html)
 
 ## 3. Vue3 Composition API
 
@@ -78,6 +78,20 @@ export default defineComponent({
 - watch : 첫번째 인자로는 감시할 대상, 두번째는 현재값, 이전값을 알 수 있는 콜백, 세번째는 감시옵션을 넣어 사용한다.
 
 [https://github.com/vuejs/composition-api](https://github.com/vuejs/composition-api)
+
+## 4. Vite의 환경 변수와 모드
+
+Vite는 import.meta.env 객체를 이용해 환경 변수에 접근할 수 있도록 하고 있으며, 아래와 같은 환경 변수에 접근이 가능합니다.
+
+- import.meta.env.MODE: {string} 현재 앱이 동작하고 있는 모드입니다.
+
+- import.meta.env.BASE_URL: {string} 앱이 제공되는 베이스 URL이며, 이 값은 base 설정에 의해 결정됩니다.
+
+- import.meta.env.PROD: {boolean} 앱이 프로덕션에서 실행 중인지 여부입니다.
+
+- import.meta.env.DEV: {boolean} 앱이 개발 환경에서 실행 중인지 여부이며, 항상 import.meta.env.PROD와 반대되는 값을 가집니다.
+
+[Vite 환경변수와 모드](https://vitejs-kr.github.io/guide/env-and-mode.html#client-types)
 
 # 추가 코드 작성시 주의사항
 
