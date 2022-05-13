@@ -37,25 +37,20 @@ export default defineComponent({
 - 타입스크립트 사용시 명시 필요
 
 ```tsx
-<script lang="ts">
-...
-</script>
+<script lang="ts">...</script>
 ```
 
 ## 2. 타입스크립트에서 보는 새로운 타입들 (기본 외)
 
 - 타입체킹에 대한 파일은 `node_modules\vuex\types\index.d.ts` 파일에서 기본적으로 도움을 받을 수 있다.
 - 타입
-    1. any : 기본적으로 타입 체킹을 하지 않는 것과 같음 (권고하지 않음)
-    2. type : 타입이 명시되어 있는 고정된 수의 요소를 포함한 타입 배열을 정의
-    3. enum : numberic값들을 익숙한 네임으로 정의 할 수 있다.
-    
-    이 외의 것들은 아래 페이지 참고
-    
-    [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-    
-    [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
-    
+  1. any : 기본적으로 타입 체킹을 하지 않는 것과 같음 (권고하지 않음)
+  2. type : 타입이 명시되어 있는 고정된 수의 요소를 포함한 타입 배열을 정의
+  3. enum : numberic값들을 익숙한 네임으로 정의 할 수 있다.
+  이 외의 것들은 아래 페이지 참고
+  [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+  [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
+  [타입스크립트에서 기본적으로 제공해주는 유틸 타입](https://blog.martinwork.co.kr/typescript/2019/05/28/typescript-util-types.html)
 
 ## 3. Vue3 Composition API
 
@@ -86,7 +81,7 @@ export default defineComponent({
 
 # 추가 코드 작성시 주의사항
 
-## 1. ****Vue 이벤트 버스 사용을 피한다.****
+## 1. \***\*Vue 이벤트 버스 사용을 피한다.\*\***
 
 이 패턴은 단순한 시나리오에서 `$dispatch`와 `$broadcast`를 대체 할 수 있지만, 더 복잡한 경우에는 Vuex와 같은 전용 상태 관리 레이어를 사용하는 것이 좋다.
 
@@ -94,23 +89,23 @@ export default defineComponent({
 
 ```jsx
 // 이벤트 버스 예시 (Vue 2)
-import Vue from 'vue';
+import Vue from "vue";
 const eventBus = new Vue();
 
 // 구독
-eventBus.$on('sandwich-made', () => console.log('sandwich made!'));
+eventBus.$on("sandwich-made", () => console.log("sandwich made!"));
 
 // 발행
-eventBus.$emit('sandwich-made');
+eventBus.$emit("sandwich-made");
 // 써드 파티 라이브러리(ex. mitt)를 사용하여 리팩토링
-import mitt from 'mitt';
+import mitt from "mitt";
 const eventBus = mitt();
 
 // 구독
-eventBus.on('sandwich-made', () => console.log('sandwich made!'));
+eventBus.on("sandwich-made", () => console.log("sandwich made!"));
 
 // 발행
-eventBus.emit('sandwich-made');
+eventBus.emit("sandwich-made");
 ```
 
 ## 2. Filter 함수를 사용하지 않는다.
