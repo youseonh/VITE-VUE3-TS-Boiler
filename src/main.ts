@@ -1,7 +1,24 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import { Quasar } from "quasar";
 
-import router from "./router/router"; // 추가
-import store from "./store"; // 추가
+import { setupRouter } from "/@/router";
+import { setupStore } from "/@/store";
 
-createApp(App).use(router, store).mount("#app");
+import "@quasar/extras/material-icons/material-icons.css";
+// Import Quasar css
+import "quasar/src/css/index.sass";
+
+async function create() {
+  const app = createApp(App);
+
+  setupStore(app);
+  setupRouter(app);
+  // await setupI18n(app);
+  app.use(Quasar, {
+    plugins: {}, // import Quasar plugins and add here
+  });
+  app.mount("#app");
+}
+
+create();

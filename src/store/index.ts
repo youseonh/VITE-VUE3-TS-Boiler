@@ -1,30 +1,11 @@
 // src/store/index.ts
-import Vuex, { StoreOptions } from "vuex";
-import moduleA from "./modules/ModuleA";
-import moduleB from "./modules/ModuleB";
+import type { App } from "vue";
+import { createPinia } from "pinia";
 
-export interface RootState {
-  data: string;
+const store = createPinia();
+
+export function setupStore(app: App<Element>) {
+  app.use(store);
 }
-const store: StoreOptions<RootState> = {
-  state: { data: "root" },
-  modules: { moduleA, moduleB },
-  mutations: {
-    setData(state, data: string) {
-      // -> commit('setData')
-      state.data = data;
-    },
-  },
-  actions: {
-    setRootData({ commit }, data: string) {
-      // -> dispatch('setRootData')
-      console.log("RootState set Root Data");
-      commit("setData", data);
-    },
-  },
-  getters: {
-    data: (state) => state.data, // -> getters['data']
-  },
-};
 
-export default new Vuex.Store(store);
+export { store };
