@@ -37,6 +37,6 @@
     // "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기
     // "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"], // 변환할 폴더 경로
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"], // 변환할 폴더 경로
   "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"] //  변환하지 않을 폴더 경로
 }

@@ -14,10 +14,14 @@ async function create() {
 
   setupStore(app);
   setupRouter(app);
-  // await setupI18n(app);
+
   app.use(Quasar, {
     plugins: {}, // import Quasar plugins and add here
   });
+
+  // vue devtools 확장앱 설정
+  app.config.performance = true;
+
   app.mount("#app");
 }
 
