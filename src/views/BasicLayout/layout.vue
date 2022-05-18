@@ -18,13 +18,7 @@ const toggleLeftDrawer = () => {
         <q-btn-dropdown stretch flat label="Dropdown">
           <q-list>
             <q-item-label header>Folders</q-item-label>
-            <q-item
-              v-for="n in 3"
-              :key="n"
-              clickable
-              v-close-popup
-              tabindex="0"
-            >
+            <q-item v-for="n in 3" :key="n" clickable tabindex="0">
               <q-item-section avatar>
                 <q-avatar icon="folder" color="secondary" text-color="white" />
               </q-item-section>
@@ -45,7 +39,7 @@ const toggleLeftDrawer = () => {
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="/page1" label="메뉴1" />
+        <q-route-tab to="/list" label="메뉴1" />
         <q-route-tab to="/page2" label="메뉴2" />
         <q-route-tab to="/page3" label="메뉴3" />
       </q-tabs>
@@ -55,13 +49,13 @@ const toggleLeftDrawer = () => {
     </q-drawer> -->
 
     <q-page-container>
-      <!-- <router-view /> -->
+      <router-view />
     </q-page-container>
 
     <q-footer reveal elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <div>alert 영역?</div>
+          <div>알림 영역?</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

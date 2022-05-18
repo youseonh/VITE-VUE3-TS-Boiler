@@ -2,10 +2,19 @@
   "name": "vite-vue3-ts-boiler",
   "private": true,
   "version": "0.0.0",
+  "keywords": [
+    "vite",
+    "vue3",
+    "vue-router",
+    "setup",
+    "typescript",
+    "pinia"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "build-tsc": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
     "@quasar/extras": "^1.13.6",
@@ -20,6 +29,7 @@
     "pinia": "^2.0.14",
     "quasar": "^2.6.6",
     "vue": "^3.2.33",
+    "vue-i18n": "^9.1.10",
     "vue-router": "^4.0.15",
     "vuex": "^4.0.2"
   },

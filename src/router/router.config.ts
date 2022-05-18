@@ -1,35 +1,44 @@
 import type { RouteRecordRaw } from "vue-router";
 
-const constantRoutes: RouteRecordRaw[] = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    component: () => import("/@/views/BasicLayout/layout.vue"),
-    name: "login",
-    meta: { title: " 로그인" },
+    redirect: "/basicLayout",
+  },
+  {
+    path: "/basicLayout",
+    name: "BasicLayout",
+    component: () =>
+      import(
+        /* webpackChunkName: "inputDemo" */ "/@/views/BasicLayout/layout.vue"
+      ),
+    meta: {
+      breadCrumb: [
+        {
+          path: "/basicLayout",
+          text: "Home",
+        },
+      ],
+    },
+    children: [
+      {
+        path: "/list",
+        name: "List",
+        component: () =>
+          import(
+            /* webpackChunkName: "level2" */ "/@/views/Menus/List/List.vue"
+          ),
+        meta: {
+          breadCrumb: [
+            {
+              path: "/list",
+              text: "List",
+            },
+          ],
+        },
+      },
+    ],
   },
 ];
 
-// export const publicRoutes = [
-//   {
-//     path: "/redirect",
-//     component: BlankLayout,
-//     children: [
-//       {
-//         path: "/redirect/:path(.*)",
-//         component: () => import("/@/views/BasicLayout/layout.vue"),
-//       },
-//     ],
-//   },
-//   {
-//     path: "/:pathMatch(.*)",
-//     redirect: "/404",
-//   },
-//   {
-//     path: "/404",
-//     component: () => import("/@/views/BasicLayout/layout.vue"),
-//   },
-// ];
-
-export const constantRouterMap = [];
-
-export default constantRoutes;
+export default routes;

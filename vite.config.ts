@@ -10,9 +10,12 @@ export default defineConfig({
       template: { transformAssetUrls },
     }),
     quasar({
-      sassVariables: "src/quasar-variables.sass",
+      sassVariables: "src/styles/quasar-variables.sass",
     }),
   ],
+  server: {
+    host: "0.0.0.0",
+  },
   resolve: {
     alias: [
       {
@@ -20,6 +23,7 @@ export default defineConfig({
         replacement: "vue-i18n/dist/vue-i18n.cjs.js",
       },
       { find: "/@", replacement: path.resolve(__dirname, "src") },
+      { find: "/#", replacement: path.resolve(__dirname, "types") },
     ],
   },
 });

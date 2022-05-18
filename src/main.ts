@@ -1,7 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import { Quasar } from "quasar";
-
 import { router } from "/@/router";
 import { store } from "/@/store";
 
@@ -9,15 +8,27 @@ import "@quasar/extras/material-icons/material-icons.css";
 // Import Quasar css
 import "quasar/src/css/index.sass";
 
-const app = createApp(App);
+import { createI18n } from "vue-i18n";
+import { numberFormats } from "/@/locales/index";
+import { messages, defaultLocale } from "/@/locales";
 
-app.use(router);
-app.use(store);
-app.use(Quasar, {
-  plugins: {}, // import Quasar plugins and add here
+const i18n = createI18n({
+  legacy: false,
+  globalInjection: true,
+  messages,
+  numberFormats,
+  fallbackLocale: defaultLocale,
 });
 
-// vue devtools 확장앱 설정
+const app = createApp(App); // vue devtools 확장앱 설정
 app.config.performance = true;
+app.config.globalProperties.$router = router;
 
-app.mount("#app");
+app
+  .use(store)
+  .use(router)
+  .use(Quasar, {
+    plugins: {}, // import Quasar plugins and add here
+  })
+  .use(i18n)
+  .mount("#app");

@@ -1,0 +1,16 @@
+{
+  "cart": {
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "Tax",
+    "total": "Total",
+    "empty-cart": "Cart is empty",
+    "complete-order": "Complete Order",
+    "review-cart": "Review your cart"
+  },
+  "home": {
+    "addToCart": "Add to cart",
+    "soldOut": "SOLD OUT!",
+    "selectQty": "Select quantity"
+  }
+}

@@ -1,4 +1,3 @@
-import type { App } from "vue";
 import { createRouter, createWebHistory, RouteParams } from "vue-router";
 import routes from "/@/router/router.config";
 
