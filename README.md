@@ -1,3 +1,7 @@
+# Vite + Vue3 + TypeScript 보일러플레이트 README
+
+---
+
 # 예시 코드
 
 ```tsx
@@ -32,27 +36,28 @@ export default defineComponent({
 
 # 사용 방법
 
-## 1. 개발 언어 속성 명시
+## 1. 개발 언어 속성 명시 (필수)
 
 - 타입스크립트 사용시 명시 필요
 
 ```tsx
-<script lang="ts">...</script>
+<script setup lang="ts">
+  ...
+</script>
 ```
 
-## 2. 타입스크립트에서 보는 새로운 타입들 (기본 외)
+## 2. 타입스크립트에서 보는 새로운 타입들 (참고)
 
 - 타입체킹에 대한 파일은 `node_modules\vuex\types\index.d.ts` 파일에서 기본적으로 도움을 받을 수 있다.
 - 타입
   1. any : 기본적으로 타입 체킹을 하지 않는 것과 같음 (권고하지 않음)
   2. type : 타입이 명시되어 있는 고정된 수의 요소를 포함한 타입 배열을 정의
   3. enum : numberic값들을 익숙한 네임으로 정의 할 수 있다.
-     이 외의 것들은 아래 페이지 참고
-     [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-     [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
-     [타입스크립트에서 기본적으로 제공해주는 유틸 타입](https://blog.martinwork.co.kr/typescript/2019/05/28/typescript-util-types.html)
+  이 외의 것들은 아래 페이지 참고
+  [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+  [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
 
-## 3. Vue3 Composition API
+## 3. Vue3 Composition API (참고)
 
 ### 1) setup
 
@@ -79,48 +84,111 @@ export default defineComponent({
 
 [https://github.com/vuejs/composition-api](https://github.com/vuejs/composition-api)
 
-## 4. Vite의 환경 변수와 모드
+## 4. 라이브러리 설명
 
-Vite는 import.meta.env 객체를 이용해 환경 변수에 접근할 수 있도록 하고 있으며, 아래와 같은 환경 변수에 접근이 가능합니다.
+### 1) vueuse
 
-- import.meta.env.MODE: {string} 현재 앱이 동작하고 있는 모드입니다.
+- 왜 사용해야 하는가?
+  - Vue 2 & 3 지원 (Vue 2의 경우 일부 기능 미지원)
+  - CSS 애니메이션, 브라우저, 컴포넌트 등의 유용한 헬퍼를 `Use` 함수로 제공
+  - `Composition API` 사용으로 금방 친숙 (당연하겠지만 Options API 및 Composition API 모두 사용 가능)
+  - 큰 커뮤니티, 검증된 함수
+- 주요 함수
+  - `[useTransition](https://vueuse.org/core/usetransition/)`: CSS 트랜지션 생성에 도움을 준다.
+  - `[useActiveElement](https://vueuse.org/core/useactiveelement/)` - `[document.activeElement](https://developer.mozilla.org/ko/docs/Web/API/Document/activeElement)` 의 반응성 추가!
+  - `[useClipboard](https://vueuse.org/core/useclipboard/)`: 반응성이 생신 클립보드 API
+  - `[useFetch](https://vueuse.org/core/usefetch/)`: `Fetch API`에 반응성이 무슨 의미가 있나고? 이 함수를 통해 URL을 `ref` 함수로 초기화해서 넣기만 하면 URL 값이 바뀔 때마다 내용도 바뀐다!
+  - `[useTitle](https://vueuse.org/core/useclipboard/)`: 문서 제목을 동적으로 바꾸면서 Vue스럽게 원한다면 이만한 놈이 없다.
+  - `[templateRef](https://vueuse.org/core/templateref/)`: [Composition API 에서 `ref` 지정한 요소를 가져오기엔 뭔가 좀 이상하다.](https://v3.ko.vuejs.org/ko-KR/guide/composition-api-template-refs.html#template-refs). 하지만 이걸 쓰면 기존 `ref` 요소를 `ref` 함수 쓰듯이 쓸 수 있다.
+  - `[useWebSocket](https://vueuse.org/core/useclipboard/)`: 웹소켓을 Vue 컴포넌트에 연결하는 엘레강스한 방법.
+  - `[onClickOutside](https://vueuse.org/core/onclickoutside/)`: 컴포넌트 요소 밖으로 마우스 클릭을 감지해서 대응하는 손쉬운 방법!
+  - `[useParallax](https://vueuse.org/core/useparallax/)`: 입체적인 효과를 반응형으로 즐기고 싶다면 이 함수가 손쉽게 수치를 제공해 준다.
+  - `[useStorage](https://vueuse.org/core/usestorage/)`: `LocalStorage`/`SessionStorage` 내 지정된 값을 반응형으로? JSON 객체도 알아서 직렬화 및 해석도 해준다!
+  - `[asyncComputed](https://vueuse.org/core/asynccomputed/)`: 기본적으로 `computed` 함수는 비동기를 지원하지 않는다. (왠만한 반응형 함수 마찬가지로 비동기 미지원) 비동기가 필요하다면 이걸 쓰면 된다.
+  - `[useDebounce](https://vueuse.org/shared/usedebounce/)`: 자주 바뀔 때, 일정 간격 **이후** 반응해서 안정적인 컴포넌트 새로고침이 필요하다면 이걸 쓰면 된다.
+  - `[useThrottle](https://vueuse.org/shared/usethrottle/)`: 자주 바뀔 때, 일정 간격 **마다** 반응해서 안정적인 컴포넌트 새로고침이 필요하다면 이걸 쓰면 된다.
+  - `[useRefHistory](https://vueuse.org/core/userefhistory/)`: 반응형 데이터 + `undo` + `redo` 기능까지 한 번에? 세상에나!
 
-- import.meta.env.BASE_URL: {string} 앱이 제공되는 베이스 URL이며, 이 값은 base 설정에 의해 결정됩니다.
+## 5. lazy-loading
 
-- import.meta.env.PROD: {boolean} 앱이 프로덕션에서 실행 중인지 여부입니다.
+### 1) 하는 이유
 
-- import.meta.env.DEV: {boolean} 앱이 개발 환경에서 실행 중인지 여부이며, 항상 import.meta.env.PROD와 반대되는 값을 가집니다.
+- spa의 단점 중 하나는 처음 웹에 진입시 번들해놓은 모든 리소스를 한번에 받습니다. 그렇기 때문에 초기 진입 속도가 느리다는 단점을 가지고 있죠. 그래서 chunk라는 것을 이용해서 초기에 화면에 접근하였을때, 굳이 필요없는 리소스는 그때그때, 받아오자는 원리로 lazy-loading, code splitting을 하는 것입니다.
+- lazy loading은 받고자 하는 리소스를 컴포넌트 단위로 분리 시키고, 컴포넌트 혹, 라우트 (vue-route에서 나누는 route) 단위로 해당 라우트, 컴포넌트에 사용자가 진입하면 리소스를 받도록 합니다.
 
-[Vite 환경변수와 모드](https://vitejs-kr.github.io/guide/env-and-mode.html#client-types)
+### 2) **lazy-loading 장점 및 유의점**
+
+- 여러개의 webpackChunkName으로 분리하면 그만큼 `초기 렌더링 시간`은 줄어들 것입니다, 그러나 화면 이동할때마다 리소스를 받기 때문에 사용자 ux적인 면은 좋지 않을 수 있으니, 프로젝트의 특성에 따라 적절하게 분리하는 것이 중요합니다.
+- 리소스를 분리시킴으로 나오는 또다른 장점은 **코드가 업데이트**되었을 때입니다. 리소스가 분리되지 않았다면 코드가 한줄이라도 변하면 다시 용량 큰 청크파일을 받아야하지만, 분리되었다면, 변경된 파일만 다운 받게 되어 그만큼 `효율`이 좋아집니다.
 
 # 추가 코드 작성시 주의사항
 
-## 1. \***\*Vue 이벤트 버스 사용을 피한다.\*\***
+## 1. script setup 구현 방법을 이용한다. (중요)
 
-이 패턴은 단순한 시나리오에서 `$dispatch`와 `$broadcast`를 대체 할 수 있지만, 더 복잡한 경우에는 Vuex와 같은 전용 상태 관리 레이어를 사용하는 것이 좋다.
+### 1) 이유
 
-이벤트 버스 개념이 프로그래밍에서 흔히 쓰이는 발행-구독(publish-subscribe) 패턴이기 때문에 아직은 [mitt](https://github.com/developit/mitt)와 같은 다른 라이브러리를 이용하여 이 개념을 사용해도 무관하다. 😉
+- 코드의 길이가 짧아진다. 쓸데없는 return문을 사용하지 않아도 됨
+- 공식사이트에서 추천하는 방식
 
-```jsx
-// 이벤트 버스 예시 (Vue 2)
-import Vue from "vue";
-const eventBus = new Vue();
+### 2) 구현 방법 비교
 
-// 구독
-eventBus.$on("sandwich-made", () => console.log("sandwich made!"));
+1. options
 
-// 발행
-eventBus.$emit("sandwich-made");
-// 써드 파티 라이브러리(ex. mitt)를 사용하여 리팩토링
-import mitt from "mitt";
-const eventBus = mitt();
+   ```tsx
+   <script lang="ts">
+   import { defineComponent } from 'vue'
+   import TestOptionItem from 'src/components/TestOptionItem.vue'
 
-// 구독
-eventBus.on("sandwich-made", () => console.log("sandwich made!"));
+   export default defineComponent({
+     name: 'TestOption',
+     components: { TestOptionItem },
+     data () {
+       return {
+         name: 'abc',
+         birth: 2000
+       }
+     },
+     methods: {
+       add () {
+         this.name += ' add'
+       }
+     }
+   })
+   </script>
+   ```
 
-// 발행
-eventBus.emit("sandwich-made");
-```
+2. composition
+
+   ```tsx
+   <script lang="ts">
+   import { defineComponent, ref } from 'vue'
+   import TestCompositionItem from 'src/components/TestCompositionItem.vue'
+
+   export default defineComponent({
+     name: 'TestComposition',
+     components: { TestCompositionItem },
+     setup () {
+       const name = ref('abc')
+       const birth = ref(2000)
+       const add = () => { name.value += ' add' }
+
+       return { name, birth, add }
+     }
+   })
+   </script>
+   ```
+
+3. script-setup
+
+   ```tsx
+   <script setup lang="ts">
+   import { ref } from 'vue'
+   import TestSetupItem from './TestSetupItem.vue'
+   const name = ref('abc')
+   const birth = ref(2000)
+   const add = () => { name.value += ' add' }
+   </script>
+   ```
 
 ## 2. Filter 함수를 사용하지 않는다.
 

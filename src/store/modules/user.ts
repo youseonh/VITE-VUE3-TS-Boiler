@@ -122,10 +122,9 @@ export const useUserStore = defineStore("user", {
     },
 
     async getMenuListAction(): Promise<any> {
-      // 아래 코드 잠시 주석
-      // if (!this.getToken) return null;
-      // const menuList = await getMenuList();
-      // this.setMenuList(menuList);
+      if (!this.getToken) return null;
+      const menuList = await getMenuList();
+      this.setMenuList(menuList);
     },
   },
 });
