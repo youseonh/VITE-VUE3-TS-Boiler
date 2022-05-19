@@ -26,4 +26,11 @@ export default defineConfig({
       { find: "/#", replacement: path.resolve(__dirname, "types") },
     ],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        prependData: `@import "${__dirname}/src/styles/variables.scss";`,
+      },
+    },
+  },
 });

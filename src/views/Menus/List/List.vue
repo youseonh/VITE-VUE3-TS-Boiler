@@ -1,5 +1,4 @@
 <template>
-  <BreadCrumbs />
   <q-page padding>
     <p v-for="n in 15" :key="n">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil
@@ -21,7 +20,6 @@
 
 <script setup lang="ts" async>
 import { onMounted, onUpdated, onUnmounted } from "vue";
-import BreadCrumbs from "/@/components/Commons/BreadCrumbs.vue";
 
 onMounted(() => {
   console.log("mounted!");

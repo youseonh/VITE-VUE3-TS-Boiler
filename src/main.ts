@@ -8,6 +8,8 @@ import "@quasar/extras/material-icons/material-icons.css";
 // Import Quasar css
 import "quasar/src/css/index.sass";
 
+import "/@/styles/index.scss";
+
 import { createI18n } from "vue-i18n";
 import { numberFormats } from "/@/locales/index";
 import { messages, defaultLocale } from "/@/locales";

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useHomeStore } from "/@/store";
+import BreadCrumbs from "/@/components/Commons/BreadCrumbs.vue";
 
-const leftDrawerOpen = ref(false);
+// const leftDrawerOpen = ref(false);
 
-const toggleLeftDrawer = () => {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-};
+// const toggleLeftDrawer = () => {
+//   leftDrawerOpen.value = !leftDrawerOpen.value;
+// };
 const homeStore = useHomeStore();
 const data = computed(() => homeStore.getThemeType);
 console.log(data.value);
@@ -52,7 +53,8 @@ console.log(data.value);
     <!-- <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
     </q-drawer> -->
 
-    <q-page-container>
+    <q-page-container class="layout-page-container-pd-m">
+      <BreadCrumbs />
       <router-view />
     </q-page-container>
 
