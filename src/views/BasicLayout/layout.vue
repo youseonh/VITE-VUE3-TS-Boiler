@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import { mapActions, mapState } from "pinia";
 import { useHomeStore } from "/@/store";
 
 const leftDrawerOpen = ref(false);
@@ -44,9 +43,9 @@ console.log(data.value);
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="/list" label="메뉴1" />
-        <q-route-tab to="/page2" label="메뉴2" />
-        <q-route-tab to="/page3" label="메뉴3" />
+        <q-route-tab to="/list" label="List" />
+        <q-route-tab to="/dashboard" label="메뉴2" />
+        <q-route-tab to="/" label="메뉴3" />
       </q-tabs>
     </q-header>
 

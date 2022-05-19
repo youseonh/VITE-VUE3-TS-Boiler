@@ -3,10 +3,6 @@ import type { RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/basicLayout",
-  },
-  {
-    path: "/basicLayout",
     name: "Home",
     component: () =>
       import(
@@ -14,12 +10,19 @@ const routes: Array<RouteRecordRaw> = [
       ),
     meta: {
       transition: "slide-right",
-      breadCrumb: {
-        path: "/basicLayout",
-        text: "Home",
-      },
     },
     children: [
+      {
+        path: "/dashboard",
+        name: "Dashboard",
+        component: () =>
+          import(
+            /* webpackChunkName: "level2" */ "/@/views/Menus/Dashboard/Dashboard.vue"
+          ),
+        meta: {
+          transition: "slide-right",
+        },
+      },
       {
         path: "/list",
         name: "List",
@@ -28,10 +31,7 @@ const routes: Array<RouteRecordRaw> = [
             /* webpackChunkName: "level2" */ "/@/views/Menus/List/List.vue"
           ),
         meta: {
-          breadCrumb: {
-            path: "/list",
-            text: "List",
-          },
+          transition: "slide-right",
         },
       },
     ],
