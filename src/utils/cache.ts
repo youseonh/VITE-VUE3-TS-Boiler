@@ -1,3 +1,6 @@
+/**
+ * 로컬 스토리지 사용 유틸
+ */
 class LocalCache {
   setCache(key: string, value: any) {
     if (value) {

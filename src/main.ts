@@ -21,9 +21,11 @@ const i18n = createI18n({
   fallbackLocale: defaultLocale,
 });
 
-const app = createApp(App); // vue devtools 확장앱 설정
+const app = createApp(App);
+
+// vue devtools 확장앱 설정
 app.config.performance = true;
-app.config.globalProperties.$router = router;
+// app.config.globalProperties.$router = router;
 
 // Configure directives
 setupGlobDirectives(app);

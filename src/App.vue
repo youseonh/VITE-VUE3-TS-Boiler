@@ -1,17 +1,21 @@
 <template>
   <div>
-    <router-view></router-view>
+    <router-view v-slot="{ Component, route }">
+      <!-- Use any custom transition and fallback to `fade` -->
+      <transition :name="route.meta.transition || 'fade'">
+        <component :is="Component" :key="route.path" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
 <script setup lang="ts">
-// setup 은 Component 가 생성되기 전에 Component 의 Option 으로 Composite API 의 진입점 역할을 도와주게 됩니다. this 를 호출할 수 없습니다.
-import { ref, onMounted } from "vue";
 // 다국어
 import { useI18n } from "vue-i18n";
 import { LocaleSupports } from "/@/enums/locales";
 
 const { locale, t, n } = useI18n();
+
 const localeSupports = LocaleSupports;
 </script>
 

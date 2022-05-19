@@ -1,6 +1,5 @@
 /**
- *  Global authority directive
- *  Used for lazyLoading image
+ *  이미지 파일 lazyLoding
  *  @Example v-lazyImg = "UserInfo.pictures"
  */
 
@@ -13,9 +12,7 @@ import defaultImg from "/@/assets/images/logo.png";
 function lazyImg(el: HTMLImageElement, binding: any) {
   const { stop } = useIntersectionObserver(el, ([{ isIntersecting }]) => {
     if (isIntersecting) {
-      // 一般在标签上接收接口传值(v-lazyImg="接口返回值.xxxURL")
       el.src = el.src || binding.value || defaultImg;
-      // 加载错误时的默认图片
       el.onerror = () => {
         el.src = binding.value || defaultImg;
       };
@@ -24,6 +21,10 @@ function lazyImg(el: HTMLImageElement, binding: any) {
   });
 }
 
+// binding = 속성을 가진 객체
+// 1. name = 디렉티브 이름
+// 2. value = 전달받은 값
+// 3. expression 4. arg 5. modifiers 6. oldValue
 const mounted = (el: HTMLImageElement, binding: DirectiveBinding<any>) => {
   lazyImg(el, binding);
 };

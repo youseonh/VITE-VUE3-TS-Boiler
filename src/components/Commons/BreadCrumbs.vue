@@ -1,24 +1,20 @@
 <template>
   <div class="q-pa-md q-gutter-sm">
     <q-breadcrumbs>
-      <!-- <q-breadcrumbs-el
-        v-for="(breadcrumb, idx) in breadcrumbList"
+      <q-breadcrumbs-el
+        v-for="(routeObj, idx) in route.matched"
         :key="idx"
-        :label="breadcrumb.name"
-        :to="breadcrumb.path"
-      /> -->
+        :label="String(routeObj.name)"
+        :to="routeObj.path"
+      />
     </q-breadcrumbs>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, getCurrentInstance } from "vue";
+// 라우터
+import { useRoute } from "vue-router";
 
-const currentInstance = getCurrentInstance();
-
-onMounted(() => {
-  if (currentInstance && currentInstance.proxy) {
-    console.log(currentInstance.proxy.$router);
-  }
-});
+const route = useRoute();
+console.log("[BreadCrumbs.vue > route] => ", route);
 </script>

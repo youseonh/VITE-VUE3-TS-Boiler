@@ -1,3 +1,7 @@
+/**
+ * type check utils
+ */
+
 export function is(val: unknown, type: string) {
   return toString.call(val) === `[object ${type}]`;
 }

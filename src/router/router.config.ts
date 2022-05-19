@@ -7,18 +7,17 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/basicLayout",
-    name: "BasicLayout",
+    name: "Home",
     component: () =>
       import(
         /* webpackChunkName: "inputDemo" */ "/@/views/BasicLayout/layout.vue"
       ),
     meta: {
-      breadCrumb: [
-        {
-          path: "/basicLayout",
-          text: "Home",
-        },
-      ],
+      transition: "slide-right",
+      breadCrumb: {
+        path: "/basicLayout",
+        text: "Home",
+      },
     },
     children: [
       {
@@ -29,12 +28,10 @@ const routes: Array<RouteRecordRaw> = [
             /* webpackChunkName: "level2" */ "/@/views/Menus/List/List.vue"
           ),
         meta: {
-          breadCrumb: [
-            {
-              path: "/list",
-              text: "List",
-            },
-          ],
+          breadCrumb: {
+            path: "/list",
+            text: "List",
+          },
         },
       },
     ],
