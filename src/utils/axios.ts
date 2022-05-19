@@ -1,5 +1,7 @@
 import Axios, { AxiosInstance } from "axios";
 import { formatJsonToUrlParams, instanceObject } from "/@/utils/format";
+import localCache from "/@/utils/cache";
+import { EnumCache } from "/@/enums/cache";
 
 const baseURL = "https://baseURL명";
 
@@ -11,8 +13,14 @@ const axios: AxiosInstance = Axios.create({
   },
 });
 
+// axios 요청시
 axios.interceptors.request.use(
   (config) => {
+    const token = localCache.getCache(EnumCache.TOKEN_KEY);
+    console.log(token);
+    // if (token) {
+    //   config.headers.Authorization = token;
+    // }
     return config;
   },
   (error) => {
@@ -20,9 +28,10 @@ axios.interceptors.request.use(
   }
 );
 
+// axios 응답시
 axios.interceptors.response.use(
   (response) => {
-    return response;
+    return response.data;
   },
   (error) => {
     if (error.response && error.response.data) {
@@ -43,7 +52,7 @@ const axiosHelper = {
   },
 
   post<T = any>(url: string, data?: object): Promise<T> {
-    return axios.post(url, data);
+    return axios.post(url, { params: data });
   },
 
   put<T = any>(url: string, data?: object): Promise<T> {

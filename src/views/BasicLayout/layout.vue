@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { mapActions, mapState } from "pinia";
+import { useHomeStore } from "/@/store";
 
 const leftDrawerOpen = ref(false);
 
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };
+const homeStore = useHomeStore();
+const data = computed(() => homeStore.getThemeType);
+console.log(data.value);
 </script>
 
 <template>

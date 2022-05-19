@@ -19,7 +19,8 @@
     "baseUrl": ".",
     "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
     "paths": {
-      "/@/*": ["src/*"]
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
     },
     "types": ["vite/client"],
     "typeRoots": ["./node_modules/@types/", "./types"],
@@ -40,5 +41,5 @@
     // "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"], // 변환할 폴더 경로
-  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"] //  변환하지 않을 폴더 경로
+  "exclude": ["node_modules", "dist"] //  변환하지 않을 폴더 경로
 }

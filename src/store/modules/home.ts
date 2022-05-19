@@ -1,9 +1,9 @@
 import { defineStore } from "pinia";
 import axiosHelper from "/@/utils/axios";
 
-const theme = defineStore({
+export const useHomeStore = defineStore({
   // 유일한 아이디
-  id: "theme",
+  id: "home",
   state: () => {
     return {
       themeType: "파란색",
@@ -34,5 +34,3 @@ const theme = defineStore({
     },
   },
 });
-
-export default theme;

@@ -19,8 +19,19 @@
   </q-page>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" async>
+import { onMounted, onUpdated, onUnmounted } from "vue";
 import BreadCrumbs from "/@/components/Commons/BreadCrumbs.vue";
+
+onMounted(() => {
+  console.log("mounted!");
+});
+onUpdated(() => {
+  console.log("updated!");
+});
+onUnmounted(() => {
+  console.log("unmounted!");
+});
 </script>
 
 <style lang="scss"></style>
