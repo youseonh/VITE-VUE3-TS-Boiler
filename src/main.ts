@@ -5,9 +5,7 @@ import { setupRouter, router } from "/@/router";
 import { setupStore } from "/@/store";
 
 import "@quasar/extras/material-icons/material-icons.css";
-// Import Quasar css
 import "quasar/src/css/index.sass";
-
 import "/@/styles/index.scss";
 
 import { createI18n } from "vue-i18n";
@@ -27,6 +25,7 @@ const app = createApp(App);
 
 // vue devtools 확장앱 설정
 app.config.performance = true;
+// 라우터 전역 변수 설정
 // app.config.globalProperties.$router = router;
 
 // Configure directives
