@@ -1,14 +1,14 @@
-import { defineStore } from "pinia";
-import axiosHelper from "/@/utils/axios";
+import { defineStore } from 'pinia';
+import axiosHelper from '/@/utils/axios';
 
 export const useHomeStore = defineStore({
   // 유일한 아이디
-  id: "home",
+  id: 'home',
   state: () => {
     return {
-      themeType: "파란색",
-      themeColor: "#2080F0FF",
-      info: "info",
+      themeType: '파란색',
+      themeColor: '#2080F0FF',
+      info: 'info',
     };
   },
   // vuex와 동일한 getter
@@ -26,7 +26,7 @@ export const useHomeStore = defineStore({
       this.info = info;
     },
     async getInfo() {
-      const res = await axiosHelper.get("/", { data: "data" });
+      const res = await axiosHelper.get('/', { data: 'data' });
       if (res) {
         this.setInfo(res);
       }

@@ -1,17 +1,17 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import { Quasar } from "quasar";
-import { setupRouter, router } from "/@/router";
-import { setupStore } from "/@/store";
+import { createApp } from 'vue';
+import App from './App.vue';
+import { Quasar } from 'quasar';
+import { setupRouter } from '/@/router';
+import { setupStore } from '/@/store';
 
-import "@quasar/extras/material-icons/material-icons.css";
-import "quasar/src/css/index.sass";
-import "/@/styles/index.scss";
+import '@quasar/extras/material-icons/material-icons.css';
+import 'quasar/src/css/index.sass';
+import '/@/styles/index.scss';
 
-import { createI18n } from "vue-i18n";
-import { numberFormats } from "/@/locales/index";
-import { messages, defaultLocale } from "/@/locales";
-import { setupGlobDirectives } from "/@/directives";
+import { createI18n } from 'vue-i18n';
+import { numberFormats } from '/@/locales/index';
+import { messages, defaultLocale } from '/@/locales';
+import { setupGlobDirectives } from '/@/directives';
 
 const i18n = createI18n({
   legacy: false,
@@ -36,4 +36,4 @@ app.use(Quasar, {
   plugins: {}, // import Quasar plugins and add here
 });
 app.use(i18n);
-app.mount("#app");
+app.mount('#app');

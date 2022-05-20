@@ -11,19 +11,19 @@ export function isArray(val: any): val is Array<any> {
 }
 
 export function isFunction(val: unknown): val is Function {
-  return typeof val === "function";
+  return typeof val === 'function';
 }
 
 export function isString(val: unknown): val is string {
-  return is(val, "String");
+  return is(val, 'String');
 }
 
 export function isNumber(val: unknown): val is number {
-  return is(val, "Number");
+  return is(val, 'Number');
 }
 
 export function isDef<T = unknown>(val?: T): val is T {
-  return typeof val !== "undefined";
+  return typeof val !== 'undefined';
 }
 
 export function isUrl(url: string): boolean {

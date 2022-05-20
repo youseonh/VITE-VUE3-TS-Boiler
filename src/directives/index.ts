@@ -6,8 +6,8 @@
  *  HTML 요소에 속성처럼 추가하여 요소에 추가적인 처리를 할 수 있다.
  */
 
-import type { App } from "vue";
-import { setupLazyImgDirectives } from "./lazyImg";
+import type { App } from 'vue';
+import { setupLazyImgDirectives } from './lazyImg';
 export function setupGlobDirectives(app: App) {
   setupLazyImgDirectives(app);
 }

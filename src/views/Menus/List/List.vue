@@ -1,3 +1,4 @@
+/* eslint-disable vue/max-attributes-per-line */
 <template>
   <q-page padding>
     <p v-for="n in 15" :key="n">
@@ -19,16 +20,16 @@
 </template>
 
 <script setup lang="ts" async>
-import { onMounted, onUpdated, onUnmounted } from "vue";
+import { onMounted, onUpdated, onUnmounted } from 'vue';
 
 onMounted(() => {
-  console.log("mounted!");
+  console.log('mounted!');
 });
 onUpdated(() => {
-  console.log("updated!");
+  console.log('updated!');
 });
 onUnmounted(() => {
-  console.log("unmounted!");
+  console.log('unmounted!');
 });
 </script>
 

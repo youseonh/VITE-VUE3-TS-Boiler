@@ -2,18 +2,18 @@
  * axios 사용 유틸
  */
 
-import Axios, { AxiosInstance } from "axios";
-import { formatJsonToUrlParams, instanceObject } from "/@/utils/format";
-import localCache from "/@/utils/cache";
-import { EnumCache } from "/@/enums/cache";
+import Axios, { AxiosInstance } from 'axios';
+import { formatJsonToUrlParams, instanceObject } from '/@/utils/format';
+import localCache from '/@/utils/cache';
+import { EnumCache } from '/@/enums/cache';
 
-const baseURL = "https://baseURL명";
+const baseURL = 'https://baseURL명';
 
 const axios: AxiosInstance = Axios.create({
   baseURL,
   timeout: 20000,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
 });
 
@@ -69,7 +69,7 @@ const axiosHelper = {
 
   upload: (url: string, file: FormData | File) =>
     axios.post(url, file, {
-      headers: { "Content-Type": "multipart/form-data" },
+      headers: { 'Content-Type': 'multipart/form-data' },
     }),
   download: (url: string, data: instanceObject) => {
     window.location.href = `${baseURL}/${url}?${formatJsonToUrlParams(data)}`;

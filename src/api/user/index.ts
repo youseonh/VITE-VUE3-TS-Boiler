@@ -1,15 +1,15 @@
-import axiosHelper from "/@/utils/axios";
+import axiosHelper from '/@/utils/axios';
 
-import type { Account, LoginInfo } from "./types";
+import type { Account, LoginInfo } from './types';
 
 enum API {
-  Login = "/login",
-  UserInfo = "/user/info",
-  MenuList = "/menu/list",
+  Login = '/login',
+  UserInfo = '/user/info',
+  MenuList = '/menu/list',
 }
 
 export function loginRequest(account: Account) {
-  return axiosHelper.post<LoginInfo>("/", account);
+  return axiosHelper.post<LoginInfo>('/', account);
 }
 
 export function getUserInfo() {

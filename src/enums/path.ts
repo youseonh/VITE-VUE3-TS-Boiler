@@ -1,8 +1,8 @@
 export enum EnumPath {
   // login path
-  LOGIN = "/login",
+  LOGIN = '/login',
   // home path
-  HOME = "/home",
+  HOME = '/home',
   // not found path
-  NOT_FOUND = "/not-found",
+  NOT_FOUND = '/not-found',
 }

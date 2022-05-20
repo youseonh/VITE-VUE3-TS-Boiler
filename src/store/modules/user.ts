@@ -1,14 +1,14 @@
-import { defineStore } from "pinia";
-import { router } from "/@/router";
-import { EnumCache } from "/@/enums/cache";
-import { EnumPath } from "/@/enums/path";
-import localCache from "/@/utils/cache";
-import { loginRequest, getUserInfo, getMenuList } from "/@/api/user";
-import { isArray } from "/@/utils/is";
-import { mapMenuToRoutes } from "/@/utils/menu";
+import { defineStore } from 'pinia';
+import { router } from '/@/router';
+import { EnumCache } from '/@/enums/cache';
+import { EnumPath } from '/@/enums/path';
+import localCache from '/@/utils/cache';
+import { loginRequest, getUserInfo, getMenuList } from '/@/api/user';
+import { isArray } from '/@/utils/is';
+import { mapMenuToRoutes } from '/@/utils/menu';
 
-import type { EnumRole } from "/@/enums/role";
-import type { UserInfo } from "/#/store";
+import type { EnumRole } from '/@/enums/role';
+import type { UserInfo } from '/#/store';
 
 interface UserState {
   token?: string;
@@ -17,9 +17,9 @@ interface UserState {
   menuList: any[];
 }
 
-export const useUserStore = defineStore("user", {
+export const useUserStore = defineStore('user', {
   state: (): UserState => ({
-    token: "",
+    token: '',
     userInfo: null,
     roleList: [],
     menuList: [],
@@ -49,7 +49,7 @@ export const useUserStore = defineStore("user", {
 
   actions: {
     setToken(token: string | undefined): void {
-      this.token = token || "";
+      this.token = token || '';
       localCache.setCache(EnumCache.TOKEN_KEY, this.token);
     },
 
@@ -95,14 +95,14 @@ export const useUserStore = defineStore("user", {
       // get menu list
       await this.getMenuListAction();
 
-      router.push("/");
+      router.push('/');
     },
 
     logout() {
       this.setToken(undefined);
       this.setUserInfo(null);
 
-      router.push("/");
+      router.push('/');
     },
 
     async getUserInfoAction(): Promise<UserInfo | null> {

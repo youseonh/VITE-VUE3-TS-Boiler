@@ -8,5 +8,5 @@
   </q-page>
 </template>
 <script setup lang="ts">
-import BasicCard from "/@/components/Cards/BasicCard.vue";
+import BasicCard from '/@/components/Cards/BasicCard.vue';
 </script>

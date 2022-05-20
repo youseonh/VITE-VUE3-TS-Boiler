@@ -1,5 +1,5 @@
-import type { RouteRecordRaw } from "vue-router";
-import routeConfigs from "/@/router/router.config";
+import type { RouteRecordRaw } from 'vue-router';
+import routeConfigs from '/@/router/router.config';
 
 export function mapMenuToRoutes(menuList: any[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = [];

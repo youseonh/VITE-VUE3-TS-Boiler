@@ -2,38 +2,6 @@
 
 ---
 
-# 예시 코드
-
-```tsx
-<script lang="ts">
-import { defineComponent, reactive, onMounted } from 'vue';
-import { Type1, Type2 } from '../types';
-import A from './A.vue';
-
-export default defineComponent({
-  name: 'B',
-  components: {
-    A,
-  },
-  setup() {
-    const state = reactive({
-      obj: { ... } as Type1,
-      arr: [] as Type2[],
-    });
-    const onClick = () => { ... };
-    onMounted(() => {
-      state.arr.filter((i: Type2) => i.flag === false);
-    });
-
-    return {
-      ...toRefs(state),
-      onClick,
-    };
-  },
-});
-</script>
-```
-
 # 사용 방법
 
 ## 1. 개발 언어 속성 명시 (필수)
@@ -53,9 +21,9 @@ export default defineComponent({
   1. any : 기본적으로 타입 체킹을 하지 않는 것과 같음 (권고하지 않음)
   2. type : 타입이 명시되어 있는 고정된 수의 요소를 포함한 타입 배열을 정의
   3. enum : numberic값들을 익숙한 네임으로 정의 할 수 있다.
-  이 외의 것들은 아래 페이지 참고
-  [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-  [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
+     이 외의 것들은 아래 페이지 참고
+     [Documentation - Everyday Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+     [[TypeScript] 타입스크립트 시작하기](https://hasudoki.tistory.com/entry/TypeScript-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
 
 ## 3. Vue3 Composition API (참고)
 

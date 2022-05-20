@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 // 라우터
-import { useRoute } from "vue-router";
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
-console.log("[BreadCrumbs.vue > route] => ", route);
+console.log('[BreadCrumbs.vue > route] => ', route);
 </script>

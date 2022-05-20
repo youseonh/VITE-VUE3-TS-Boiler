@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 // 다국어
-import { useI18n } from "vue-i18n";
-import { LocaleSupports } from "/@/enums/locales";
+import { useI18n } from 'vue-i18n';
+import { LocaleSupports } from '/@/enums/locales';
 
 const { locale, t, n } = useI18n();
 const localeSupports = LocaleSupports;

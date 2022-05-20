@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useHomeStore } from "/@/store";
-import BreadCrumbs from "/@/components/Commons/BreadCrumbs.vue";
+import { ref, computed } from 'vue';
+import { useHomeStore } from '/@/store';
+import BreadCrumbs from '/@/components/Commons/BreadCrumbs.vue';
 
 // const leftDrawerOpen = ref(false);
 
