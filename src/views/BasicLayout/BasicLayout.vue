@@ -66,7 +66,7 @@ const menuList = [
     >
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-        <q-btn flat label="Title" @click="router.push('/dashboard')" />
+        <q-btn flat label="Title" @click="router.push('/')" />
         <q-space />
         <q-btn-dropdown stretch flat label="Dropdown">
           <q-list>

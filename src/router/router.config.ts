@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {},
     children: [
       {
-        path: '/dashboard',
+        path: '/',
         name: 'DashBoard',
         component: () =>
           import(
