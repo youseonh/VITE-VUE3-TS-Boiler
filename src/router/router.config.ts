@@ -5,35 +5,89 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Home',
     component: () =>
-      // 아래 코드처럼 작성할 시 별도의 chunk 파일을 생성하여 실제 이 라우트를 방문했을 때 리소스를 로드하게 됨
       import(
-        /* webpackChunkName: "inputDemo" */ '/@/views/BasicLayout/layout.vue'
+        /* webpackChunkName: "inputDemo" */ '/@/views/basicLayout/BasicLayout.vue'
       ),
-    meta: {
-      transition: 'slide-right',
-    },
+    meta: {},
     children: [
       {
         path: '/dashboard',
-        name: 'Dashboard',
+        name: 'DashBoard',
         component: () =>
           import(
-            /* webpackChunkName: "level2" */ '/@/views/Menus/Dashboard/Dashboard.vue'
+            /* webpackChunkName: "level2" */ '/@/views/menus/dashboard/MainDashboard.vue'
           ),
         meta: {
           transition: 'slide-right',
         },
       },
       {
-        path: '/list',
-        name: 'List',
+        path: '/menu1',
+        name: 'MainMenu1',
         component: () =>
           import(
-            /* webpackChunkName: "level2" */ '/@/views/Menus/List/List.vue'
+            /* webpackChunkName: "level2" */ '/@/views/menus/main1/MainMenu1.vue'
           ),
         meta: {
           transition: 'slide-right',
         },
+      },
+      {
+        path: '/menu2',
+        name: 'MainMenu2',
+        component: () =>
+          import(
+            /* webpackChunkName: "level2" */ '../views/menus/main2/MainMenu2.vue'
+          ),
+        meta: {
+          transition: 'slide-right',
+        },
+      },
+      {
+        path: '/menu3',
+        name: 'MainMenu3',
+        component: () =>
+          import(
+            /* webpackChunkName: "level2" */ '../views/menus/main3/MainMenu3.vue'
+          ),
+        meta: {
+          transition: 'slide-right',
+        },
+        children: [
+          {
+            path: '/menu3/submenu1',
+            name: 'SubMenu1',
+            component: () =>
+              import(
+                /* webpackChunkName: "level2" */ '/@/views/menus/main3/submenus/SubMenu1.vue'
+              ),
+            meta: {
+              transition: 'slide-right',
+            },
+          },
+          {
+            path: '/menu3/submenu2',
+            name: 'SubMenu2',
+            component: () =>
+              import(
+                /* webpackChunkName: "level2" */ '../views/menus/main3/submenus/SubMenu2.vue'
+              ),
+            meta: {
+              transition: 'slide-right',
+            },
+          },
+          {
+            path: '/menu3/submenu3',
+            name: 'SubMenu3',
+            component: () =>
+              import(
+                /* webpackChunkName: "level2" */ '../views/menus/main3/submenus/SubMenu3.vue'
+              ),
+            meta: {
+              transition: 'slide-right',
+            },
+          },
+        ],
       },
     ],
   },

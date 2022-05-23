@@ -1,11 +1,12 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
+  <div class="q-pa-sm q-gutter-sm">
     <q-breadcrumbs>
       <q-breadcrumbs-el
         v-for="(routeObj, idx) in route.matched"
         :key="idx"
         :label="String(routeObj.name)"
         :to="routeObj.path"
+        full
       />
     </q-breadcrumbs>
   </div>

@@ -25,8 +25,8 @@
     "types": ["vite/client"],
     "typeRoots": ["./node_modules/@types/", "./types"],
     "removeComments": true, //컴파일시 주석제거
-    "lib": ["esnext", "dom", "dom.iterable"], // 타입스크립트 파일을 자바스크립트로 컴파일 할 때 포함될 라이브러리의 목록
-    "declaration": true //컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
+    "lib": ["esnext", "dom", "dom.iterable"] // 타입스크립트 파일을 자바스크립트로 컴파일 할 때 포함될 라이브러리의 목록
+    // "declaration": true //컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
     // "checkJs": true, // 일반 js 파일에서도 에러체크 여부
     // "outFile": "./", //모든 ts파일을 js파일 하나로 컴파일해줌 (module이 none, amd, system일 때만 가능)
     // "outDir": "./", //js파일 아웃풋 경로바꾸기
