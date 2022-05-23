@@ -5,16 +5,16 @@
 // 1. 컴포넌트 갯수 만큼 실행되기 때문에 변수에 대해서만 정의해야합니다. (실제 CSS에 대한 적용은 _index.scss에 작성) 
 // 2. 해당 파일은 vite.config.js에 설정되면 됨 
 ********************************************************************/
-@import "quasar-variables.sass";
+@import 'quasar-variables.sass';
 
-$body-font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+$body-font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 $border-radius-root: 6px;
 $font-size-root: 14px;
 
 // 사용자 정의 변수
 // 여기에 매인컬러, 서브컬러 등의 변수를 설정하면 SCSS 어디에서도 사용할 수 있습니다.
 
-$color-main: #ff3322;
+$color-main: hsl(88, 100%, 80%);
 $color-sub: #334455;
 $color-gray-1: #333333;
 $color-gray-2: #666666;

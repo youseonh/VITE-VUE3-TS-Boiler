@@ -58,12 +58,7 @@ const menuList = [
 
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header
-      reveal
-      elevated
-      class="bg-blue-grey-8 text-white"
-      height-hint="98"
-    >
+    <q-header reveal elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-btn flat label="Title" @click="router.push('/')" />
@@ -94,7 +89,7 @@ const menuList = [
       <q-tabs align="left">
         <q-route-tab to="/menu1" label="메뉴1(서브X)" />
         <q-route-tab to="/menu2" label="메뉴2(서브X)" />
-        <q-route-tab to="/menu3" label="메뉴3(서브O)" />
+        <q-route-tab to="/menu3/submenu1" label="메뉴3(서브O)" />
       </q-tabs>
     </q-header>
 
@@ -120,7 +115,7 @@ const menuList = [
       <router-view />
     </q-page-container>
 
-    <q-footer reveal elevated class="bg-grey-8 text-white">
+    <q-footer reveal elevated class="bg-primary text-white">
       <q-toolbar>
         <q-toolbar-title>
           <div>알림 영역?</div>
