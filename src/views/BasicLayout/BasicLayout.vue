@@ -4,7 +4,6 @@ import { useRouter } from 'vue-router';
 import { useHomeStore } from '/@/store';
 
 const leftDrawerOpen = ref(false);
-
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };

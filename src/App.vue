@@ -14,7 +14,7 @@
 import { useI18n } from 'vue-i18n';
 import { LocaleSupports } from '/@/enums/locales';
 
-const { locale, t, n } = useI18n();
+const { locale, t, n } = useI18n({ useScope: 'global' });
 const localeSupports = LocaleSupports;
 </script>
 

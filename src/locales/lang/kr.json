@@ -10,7 +10,7 @@
   },
   "home": {
     "addToCart": "Ajouter au panier",
-    "soldOut": "SOLDER!",
+    "soldOut": "솔드아웃!",
     "selectQty": "Sélectionnez la quantité"
   }
 }

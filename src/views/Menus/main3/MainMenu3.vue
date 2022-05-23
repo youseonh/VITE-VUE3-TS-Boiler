@@ -2,9 +2,7 @@
   <q-page padding class="bg-blue-grey-1">
     <bread-crumbs />
     <top-sub-menu-bar />
-    <q-page>
-      <router-view />
-    </q-page>
+    <router-view />
   </q-page>
 </template>
 <script setup lang="ts">

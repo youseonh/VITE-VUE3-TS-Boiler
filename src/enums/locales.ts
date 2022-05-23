@@ -3,7 +3,7 @@ export enum Locales {
   FR = 'fr',
   EN_US = 'en-US',
   FR_CA = 'fr-CA',
-  KR = 'kr',
+  KR = 'ko-KR',
 }
 export const LocaleSupports = [
   { value: Locales.EN, caption: 'English' },

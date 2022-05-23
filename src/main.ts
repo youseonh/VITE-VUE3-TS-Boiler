@@ -9,11 +9,11 @@ import 'quasar/src/css/index.sass';
 import '/@/styles/index.scss';
 
 import { createI18n } from 'vue-i18n';
-import { numberFormats } from '/@/locales/index';
-import { messages, defaultLocale } from '/@/locales';
+import { messages, defaultLocale, numberFormats } from '/@/locales';
 import { setupGlobDirectives } from '/@/directives';
 
 const i18n = createI18n({
+  locale: defaultLocale, // 나라 변경시 이 부분 바꾸기
   legacy: false,
   globalInjection: true,
   messages,
