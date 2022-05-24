@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import prettier from 'prettier';
 
+// 추가로 필요한 alias 항목 아래에 작성
 const aliases = {
   'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
 
