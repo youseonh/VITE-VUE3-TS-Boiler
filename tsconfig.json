@@ -1,45 +1,39 @@
-/**
-타입스크립트 설정 파일은 타입스크립트를 
-자바스크립트로 변환할 때의 설정을 정의해놓는 파일입니다. 
-프로젝트에서 tsc라는 명령어를 치면 타입스크립트 설정 파일에 정의된 내용을 기준으로 변환 작업(컴파일)을 진행합니다.
-*/
 {
   "compilerOptions": {
-    "noImplicitAny": false, //noImplicitAny는 any라는 타입이 의도치않게 발생할 경우 에러를 띄워주는 설정
-    "strictNullChecks": true, //strictNullChecks는 null, undefined 타입에 이상한 조작하면 에러를 띄우는 설정
-    "target": "esnext", // 타입스크립트 파일 컴파일 했을 때 빌드 디렉토리에 생성되는 자바스크립트 버전 (가장 최신 버전인 esnext)
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "target": "esnext",
     "useDefineForClassFields": true,
-    "module": "esnext", // 자바스크립트 파일간 import 문법을 구현할 때 어떤 문법을 쓸지 정하는 곳 ( esnext는 import 문법 )
+    "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
-    "jsx": "preserve", // tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'
+    "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "allowJs": true, // js 파일들 ts에서 import해서 쓸 수 있는지
-    "paths": {
-      "/@/*": ["src/*"],
-      "/#/*": ["types/*"]
-    },
+    "allowJs": true,
     "types": ["vite/client"],
     "typeRoots": ["./node_modules/@types/", "./types"],
-    "removeComments": true, //컴파일시 주석제거
-    "lib": ["esnext", "dom", "dom.iterable"] // 타입스크립트 파일을 자바스크립트로 컴파일 할 때 포함될 라이브러리의 목록
-    // "declaration": true //컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
-    // "checkJs": true, // 일반 js 파일에서도 에러체크 여부
-    // "outFile": "./", //모든 ts파일을 js파일 하나로 컴파일해줌 (module이 none, amd, system일 때만 가능)
-    // "outDir": "./", //js파일 아웃풋 경로바꾸기
-    // "rootDir": "./", //루트경로 바꾸기 (js 파일 아웃풋 경로에 영향줌)
-    // "strictFunctionTypes": true, //함수파라미터 타입체크 강하게
-    // "strictPropertyInitialization": true, //class constructor 작성시 타입체크 강하게
-    // "noImplicitThis": true, //this 키워드가 any 타입일 경우 에러내기
-    // "alwaysStrict": true, //자바스크립트 "use strict" 모드 켜기
-    // "noUnusedLocals": true, //쓰지않는 지역변수 있으면 에러내기
-    // "noUnusedParameters": true, //쓰지않는 파라미터 있으면 에러내기
-    // "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기
-    // "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기
+    "removeComments": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@types/*": ["types/*"],
+      "@config/*": ["config/*"],
+      "@api/*": ["src/api/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@router/*": ["src/router/*"],
+      "@store/*": ["src/store/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@views/*": ["src/views/*"],
+      "@locales/*": ["src/locales/*"],
+      "@directives/*": ["src/directives/*"],
+      "@enums/*": ["src/enums/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"], // 변환할 폴더 경로
-  "exclude": ["node_modules", "dist"] //  변환하지 않을 폴더 경로
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist"]
 }

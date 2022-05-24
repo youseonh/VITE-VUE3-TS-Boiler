@@ -1,14 +1,14 @@
 import { defineStore } from 'pinia';
-import { router } from '/@/router';
-import { EnumCache } from '/@/enums/cache';
-import { EnumPath } from '/@/enums/path';
-import localCache from '/@/utils/cache';
-import { loginRequest, getUserInfo, getMenuList } from '/@/api/user';
-import { isArray } from '/@/utils/is';
-import { mapMenuToRoutes } from '/@/utils/menu';
+import { router } from '@router/';
+import { EnumCache } from '@enums/cache';
+import { EnumPath } from '@enums/path';
+import localCache from '@utils/cache';
+import { loginRequest, getUserInfo, getMenuList } from '@api/user';
+import { isArray } from '@utils/is';
+import { mapMenuToRoutes } from '@utils/menu';
 
-import type { EnumRole } from '/@/enums/role';
-import type { UserInfo } from '/#/store';
+import type { EnumRole } from '@enums/role';
+import type { UserInfo } from '@types/store';
 
 interface UserState {
   token?: string;

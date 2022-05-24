@@ -1,4 +1,4 @@
-import axiosHelper from '/@/utils/axios';
+import axiosHelper from '@utils/axios';
 
 import type { Account, LoginInfo } from './types';
 

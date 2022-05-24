@@ -12,7 +12,7 @@ import type { App, Directive, DirectiveBinding } from 'vue';
 // (viewport)와 대상 요소의 교차점에서 변화를 비동기적으로 관찰할 수 있는 방법을 제공한다
 import { useIntersectionObserver } from '@vueuse/core';
 
-import defaultImg from '/@/assets/images/logo.png';
+import defaultImg from '@assets/images/logo.png';
 
 function lazyImg(el: HTMLImageElement, binding: any) {
   const { stop } = useIntersectionObserver(el, ([{ isIntersecting }]) => {

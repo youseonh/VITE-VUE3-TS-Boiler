@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { useHomeStore } from '/@/store';
+import { useHomeStore } from '@store';
 
 const leftDrawerOpen = ref(false);
 const toggleLeftDrawer = () => {

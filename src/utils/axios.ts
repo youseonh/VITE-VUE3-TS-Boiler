@@ -3,9 +3,9 @@
  */
 
 import Axios, { AxiosInstance } from 'axios';
-import { formatJsonToUrlParams, instanceObject } from '/@/utils/format';
-import localCache from '/@/utils/cache';
-import { EnumCache } from '/@/enums/cache';
+import { formatJsonToUrlParams, instanceObject } from '@utils/format';
+import localCache from '@utils/cache';
+import { EnumCache } from '@enums/cache';
 
 const baseURL = 'https://baseURL명';
 

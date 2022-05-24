@@ -1,16 +1,16 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { Quasar } from 'quasar';
-import { setupRouter } from '/@/router';
-import { setupStore } from '/@/store';
+import { setupRouter } from '@router/';
+import { setupStore } from '@store/';
 
 import '@quasar/extras/material-icons/material-icons.css';
 import 'quasar/src/css/index.sass';
-import '/@/styles/index.scss';
+import '@styles/index.scss';
 
 import { createI18n } from 'vue-i18n';
-import { messages, defaultLocale, numberFormats } from '/@/locales';
-import { setupGlobDirectives } from '/@/directives';
+import { messages, defaultLocale, numberFormats } from '@locales/';
+import { setupGlobDirectives } from '@directives/';
 
 const i18n = createI18n({
   locale: defaultLocale, // 나라 변경시 이 부분 바꾸기

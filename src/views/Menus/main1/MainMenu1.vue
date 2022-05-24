@@ -9,6 +9,6 @@
   </q-page>
 </template>
 <script setup lang="ts">
-import BreadCrumbs from '/@/components/Commons/BreadCrumbs.vue';
-import BasicCard from '/@/components/cards/BasicCard.vue';
+import BreadCrumbs from '@components/Commons/BreadCrumbs.vue';
+import BasicCard from '@components/cards/BasicCard.vue';
 </script>

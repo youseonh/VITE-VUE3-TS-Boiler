@@ -6,6 +6,6 @@
   </q-page>
 </template>
 <script setup lang="ts">
-import TopSubMenuBar from '/@/components/commons/TopSubMenuBar.vue';
-import BreadCrumbs from '/@/components/Commons/BreadCrumbs.vue';
+import TopSubMenuBar from '@components/commons/TopSubMenuBar.vue';
+import BreadCrumbs from '@components/Commons/BreadCrumbs.vue';
 </script>

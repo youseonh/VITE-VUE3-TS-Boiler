@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts" async>
-import BreadCrumbs from '/@/components/Commons/BreadCrumbs.vue';
+import BreadCrumbs from '@components/Commons/BreadCrumbs.vue';
 import { onMounted, onUpdated, onUnmounted } from 'vue';
 
 onMounted(() => {

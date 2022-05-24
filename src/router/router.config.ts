@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: () =>
       import(
-        /* webpackChunkName: "inputDemo" */ '/@/views/basicLayout/BasicLayout.vue'
+        /* webpackChunkName: "inputDemo" */ '@views/basicLayout/BasicLayout.vue'
       ),
     meta: {},
     children: [
@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'DashBoard',
         component: () =>
           import(
-            /* webpackChunkName: "level2" */ '/@/views/menus/dashboard/MainDashboard.vue'
+            /* webpackChunkName: "level2" */ '@views/menus/dashboard/MainDashboard.vue'
           ),
         meta: {
           transition: 'slide-right',
@@ -26,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'MainMenu1',
         component: () =>
           import(
-            /* webpackChunkName: "level2" */ '/@/views/menus/main1/MainMenu1.vue'
+            /* webpackChunkName: "level2" */ '@views/menus/main1/MainMenu1.vue'
           ),
         meta: {
           transition: 'slide-right',
@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'MainMenu2',
         component: () =>
           import(
-            /* webpackChunkName: "level2" */ '../views/menus/main2/MainMenu2.vue'
+            /* webpackChunkName: "level2" */ '@views/menus/main2/MainMenu2.vue'
           ),
         meta: {
           transition: 'slide-right',
@@ -48,7 +48,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'MainMenu3',
         component: () =>
           import(
-            /* webpackChunkName: "level2" */ '../views/menus/main3/MainMenu3.vue'
+            /* webpackChunkName: "level2" */ '@views/menus/main3/MainMenu3.vue'
           ),
         meta: {
           transition: 'slide-right',
@@ -59,7 +59,7 @@ const routes: Array<RouteRecordRaw> = [
             name: 'SubMenu1',
             component: () =>
               import(
-                /* webpackChunkName: "level2" */ '/@/views/menus/main3/submenus/SubMenu1.vue'
+                /* webpackChunkName: "level2" */ '@views/menus/main3/submenus/SubMenu1.vue'
               ),
             meta: {
               transition: 'slide-right',
@@ -70,7 +70,7 @@ const routes: Array<RouteRecordRaw> = [
             name: 'SubMenu2',
             component: () =>
               import(
-                /* webpackChunkName: "level2" */ '../views/menus/main3/submenus/SubMenu2.vue'
+                /* webpackChunkName: "level2" */ '@views/menus/main3/submenus/SubMenu2.vue'
               ),
             meta: {
               transition: 'slide-right',
@@ -81,7 +81,7 @@ const routes: Array<RouteRecordRaw> = [
             name: 'SubMenu3',
             component: () =>
               import(
-                /* webpackChunkName: "level2" */ '../views/menus/main3/submenus/SubMenu3.vue'
+                /* webpackChunkName: "level2" */ '@views/menus/main3/submenus/SubMenu3.vue'
               ),
             meta: {
               transition: 'slide-right',

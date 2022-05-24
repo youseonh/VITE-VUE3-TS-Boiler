@@ -1,7 +1,10 @@
 {
   "recommendations": [
-    "vue.vscode-typescript-vue-plugin",
+    "znck.vue-language-features",
+    "znck.vue",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
     "vue.volar",
-    "znck.vue-language-features"
+    "Vue.vscode-typescript-vue-plugin"
   ]
 }

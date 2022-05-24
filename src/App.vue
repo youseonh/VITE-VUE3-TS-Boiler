@@ -12,10 +12,9 @@
 <script setup lang="ts">
 // 다국어
 import { useI18n } from 'vue-i18n';
-import { LocaleSupports } from '/@/enums/locales';
+// import { LocaleSupports } from '@/enums/locales';
 
 const { locale, t, n } = useI18n({ useScope: 'global' });
-const localeSupports = LocaleSupports;
 </script>
 
 <style>

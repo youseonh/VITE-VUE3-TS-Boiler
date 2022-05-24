@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import axiosHelper from '/@/utils/axios';
+import axiosHelper from '@utils/axios';
 
 export const useHomeStore = defineStore({
   // 유일한 아이디
