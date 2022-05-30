@@ -7,7 +7,7 @@ const aliases = {
   'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
 
   '@': 'src',
-  '@types': 'types',
+  '#types': 'types',
   '@config': 'config',
   '@api': 'src/api',
   '@assets': 'src/assets',
@@ -45,22 +45,16 @@ for (const aliasKey in aliases) {
   /**tsconfig.json 파일 */
   if (aliasKey !== 'vue-i18n') {
     aliasObj.tsconfig[aliasKey + '/*'] = [aliasValue + '/*'];
+    aliasObj.tsconfig[aliasKey] = aliasValue.includes('/index.')
+      ? [aliasValue]
+      : [aliasValue + '/index.ts'];
   }
-  // aliasObj.tsconfig[aliasKey] = aliasValue.includes('/index.')
-  //   ? [aliasValue]
-  //   : [
-  //       aliasValue + '/index.js',
-  //       aliasValue + '/index.ts',
-  //       aliasValue + '/index.json',
-  //       aliasValue + '/index.vue',
-  //       aliasValue + '/index.scss',
-  //       aliasValue + '/index.css',
-  //     ];
 }
 
 import { template } from './tsconfig.template';
 import prettierrc from './.prettierrc';
 const tsconfigTemplate = template;
+
 const tsconfigPath = path.resolve(__dirname, 'tsconfig.json');
 
 fs.writeFile(
@@ -87,6 +81,7 @@ fs.writeFile(
 );
 
 function resolveSrc(_path: string) {
+  console.log(__dirname);
   if (_path.includes('vue-i18n')) {
     return _path;
   } else {

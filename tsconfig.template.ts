@@ -21,6 +21,12 @@ export const template = {
     removeComments: true, //컴파일시 주석제거
     lib: ['esnext', 'dom', 'dom.iterable'], // 타입스크립트 파일을 자바스크립트로 컴파일 할 때 포함될 라이브러리의 목록
   },
-  include: ['src/**/*.ts', 'src/**/*.d.ts', 'src/**/*.tsx', 'src/**/*.vue'], // 변환할 폴더 경로
+  include: [
+    'src/**/*.ts',
+    'src/**/*.d.ts',
+    'src/**/*.tsx',
+    'src/**/*.vue',
+    'config/**/*.ts',
+  ], // 변환할 폴더 경로
   exclude: ['node_modules', 'dist'], //  변환하지 않을 폴더 경로
 };

@@ -19,21 +19,41 @@
     "lib": ["esnext", "dom", "dom.iterable"],
     "paths": {
       "@/*": ["src/*"],
-      "@types/*": ["types/*"],
+      "@": ["src/index.ts"],
+      "#types/*": ["types/*"],
+      "#types": ["types/index.ts"],
       "@config/*": ["config/*"],
+      "@config": ["config/index.ts"],
       "@api/*": ["src/api/*"],
+      "@api": ["src/api/index.ts"],
       "@assets/*": ["src/assets/*"],
+      "@assets": ["src/assets/index.ts"],
       "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.ts"],
       "@router/*": ["src/router/*"],
+      "@router": ["src/router/index.ts"],
       "@store/*": ["src/store/*"],
+      "@store": ["src/store/index.ts"],
       "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles/index.ts"],
       "@utils/*": ["src/utils/*"],
+      "@utils": ["src/utils/index.ts"],
       "@views/*": ["src/views/*"],
+      "@views": ["src/views/index.ts"],
       "@locales/*": ["src/locales/*"],
+      "@locales": ["src/locales/index.ts"],
       "@directives/*": ["src/directives/*"],
-      "@enums/*": ["src/enums/*"]
+      "@directives": ["src/directives/index.ts"],
+      "@enums/*": ["src/enums/*"],
+      "@enums": ["src/enums/index.ts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "config/**/*.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }
